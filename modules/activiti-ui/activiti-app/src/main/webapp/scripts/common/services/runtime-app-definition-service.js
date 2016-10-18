@@ -54,7 +54,8 @@ activitiApp.service('RuntimeAppDefinitionService', ['$http', '$q', '$location', 
                 identity: baseUrl + '/idm/',
                 workflow: baseUrl + '/workflow/',
                 admin: 'http://localhost:8080/activiti-admin',
-                analytics: baseUrl + '/analytics/'
+                analytics: baseUrl + '/analytics/',
+                learning: baseUrl + '/learning/'
             };
 
             var transformAppsResponse = function(value) {
@@ -139,8 +140,9 @@ activitiApp.service('RuntimeAppDefinitionService', ['$http', '$q', '$location', 
                                                           defaultAppId : app.defaultAppId,
                                                           theme: 'theme-2',
                                                           icon: 'glyphicon glyphicon-book',
-                                                          fixedBaseUrl: urls.analytics + '/#/',
-                                                          fixedUrl: urls.analytics
+                                                          fixedBaseUrl: urls.learning + '/#/',
+                                                          fixedUrl: urls.learning
+
                                                       });
 
                      } /*vce*/ else {
