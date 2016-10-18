@@ -129,7 +129,21 @@ activitiApp.service('RuntimeAppDefinitionService', ['$http', '$q', '$location', 
 
                         }
 
-                    } else {
+                     /*vcb*/ else if (app.defaultAppId === 'learning') {
+
+                                                  defaultApps.push(
+                                                      {
+                                                          id: 'learning',
+                                                          titleKey: 'APP.LEARNING.TITLE',
+                                                          descriptionKey: 'APP.LEARNING.DESCRIPTION',
+                                                          defaultAppId : app.defaultAppId,
+                                                          theme: 'theme-2',
+                                                          icon: 'glyphicon glyphicon-book',
+                                                          fixedBaseUrl: urls.analytics + '/#/',
+                                                          fixedUrl: urls.analytics
+                                                      });
+
+                     } /*vce*/ else {
 
                         // Custom app
                         //app.icon = 'glyphicon ' + app.icon;
@@ -143,7 +157,7 @@ activitiApp.service('RuntimeAppDefinitionService', ['$http', '$q', '$location', 
                     }
 
                 }
-
+                }
                 return {
                     defaultApps: defaultApps,
                     customApps: customApps

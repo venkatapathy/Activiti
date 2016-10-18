@@ -43,6 +43,10 @@ public abstract class AbstractAppDefinitionsResource {
 
   protected static final AppDefinitionRepresentation idmAppDefinitionRepresentation = AppDefinitionRepresentation.createDefaultAppDefinitionRepresentation("identity");
 
+  /*vcb*/
+  protected static final AppDefinitionRepresentation learnAppDefinitionRepresentation = AppDefinitionRepresentation.createDefaultAppDefinitionRepresentation("learning");
+  /*vce*/
+
   protected ResultListDataRepresentation getAppDefinitions() {
     List<AppDefinitionRepresentation> resultList = new ArrayList<AppDefinitionRepresentation>();
 
@@ -52,6 +56,8 @@ public abstract class AbstractAppDefinitionsResource {
     // Default app: tasks and IDM (available for all)
     resultList.add(taskAppDefinitionRepresentation);
     resultList.add(idmAppDefinitionRepresentation);
+    resultList.add(learnAppDefinitionRepresentation);
+    System.out.println("Adding Learning App");
 
     // Custom apps
     Map<String, Deployment> deploymentMap = new HashMap<String, Deployment>();

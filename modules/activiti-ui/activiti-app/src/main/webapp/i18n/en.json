@@ -83,6 +83,10 @@
             "DESCRIPTION": "Manage your profile: change your picture, name and other settings. As an admin user, manage users and groups.",
             "DESCRIPTION-TENANT-ADMIN": "Manage the users and groups in your organization."
         },
+        "LEARNING": {
+          "TITLE": "Learning Management",
+          "DESCRIPTION": "Define & begin Learning path specifications. Also take a look at Cohort & Personal learning progress!"
+        },
         "CUSTOM-APP" : {
             "TITLE-TASKS": "tasks",
             "TITLE-PROCESSES": "processes"
