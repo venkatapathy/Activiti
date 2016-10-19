@@ -1,17 +1,61 @@
 
 <div class="subheader">
 	<div class="fixed-container">
-		
+
 		<h2>Learning Path Specification</h2>
 	</div>
 </div>
 <div class="container-fluid content" auto-height offset="40">
-<div class="col-xs-2 filter-wrapper">
-			
-			<ul class="filter-list">
-				<li class="ng-scope current">
-					<a class="ng-binding">Deployed Processes</a>
-				</li>
-			</ul>
+	<div class="col-xs-2 filter-wrapper">
+
+		<ul class="filter-list">
+			<li class="ng-scope current"><a class="ng-binding">Deployed
+					Processes</a></li>
+		</ul>
+	</div>
+	<div class="col-xs-10 item-wrapper" id="list-items">
+		<div class="message clearfix">
+			<div class="loading pull-left" ng-show="model.loading">
+				<div class="l1"></div>
+				<div class="l2"></div>
+				<div class="l2"></div>
+			</div>
+
 		</div>
+		<div class="item fadein"
+			ng-repeat="process in model.processes.data track by $index">
+			<div class="item-box"
+				ng-style="{'background-image': 'url(\'' + config.contextRoot + '/app/rest/models/' + process.id + '/thumbnail?version=' + imageVersion + '\')'}" ng-click="showProcessDetails(process);">
+				<div class="actions">
+					<span class="badge">v{{process.version}}</span>
+					<div class="btn-group pull-right">
+						<button id="detailsButton" type="button"
+							
+							class="btn btn-default"
+							title="{{'PROCESS.ACTION.DETAILS' | translate}}">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+						<button id="editButton" type="button"
+							
+							class="btn btn-default"
+							title="{{'PROCESS.ACTION.OPEN-IN-EDITOR' | translate}}">
+							<i class="glyphicon glyphicon-edit"></i>
+						</button>
+					</div>
+				</div>
+				<div class="details">
+					<h3 class="truncate" title="{{process.name}}">
+						{{process.name}}</h3>
+					<div class="basic-details truncate">
+						<span><i class="glyphicon glyphicon-user"></i>
+							{{process.createdByFullName}}</span> <span
+							title="{{process.lastUpdated | dateformat:'LLLL'}}"><i
+							class="glyphicon glyphicon-pencil"></i> {{process.lastUpdated |
+							dateformat}}</span>
+					</div>
+					<p>{{process.description}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

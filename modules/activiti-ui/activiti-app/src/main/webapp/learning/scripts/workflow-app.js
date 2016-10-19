@@ -97,11 +97,19 @@ activitiApp
         })
         .when('/learning', {
             templateUrl: appResourceRoot + 'views/learningpath.html',
-            controller: 'TasksController',
+            controller: 'LearningController',
             resolve: {
                 verify: authRouteResolver
             }
-        }).when('/tasks', {
+        })
+        .when('/learning/:modelId', {
+            templateUrl: appResourceRoot + 'views/learningspec.html',
+            controller: 'LearningSpecController',
+            resolve: {
+                verify: authRouteResolver
+            }
+        })
+        .when('/tasks', {
             templateUrl: appResourceRoot + 'views/tasks.html',
             controller: 'TasksController',
             resolve: {
@@ -223,9 +231,9 @@ activitiApp
                 'unauthenticated': true
             },
             {
-                'id': 'tasks',
+                'id': 'learning',
                 'title': 'GENERAL.NAVIGATION.LEARNING',
-                'path': '/tasks'
+                'path': '/learning'
             },
             {
                 'id': 'processes',

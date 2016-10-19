@@ -1,0 +1,51 @@
+<div class="subheader" ng-if="model.process">
+	<div class="fixed-container">
+
+		<h2>Create a new Learning Path Specification</h2>
+		<h3>
+			<span class="version">v{{model.process.version}}</span>{{model.process.name}}
+		</h3>
+	</div>
+	<div class="pull-right">
+		<a ng-click="returnToList()" class="action">&larr;
+			{{'GENERAL.ACTION.RETURN-TO-LIST' | translate}}</a>
+	</div>
+</div>
+
+<div class="content center-pane" ng-if="model.process" style="height: 300px;">
+
+	<div class="model-preview-wrapper"
+		ng-if="!model.process.modelType && model.process.modelType != 1">
+		<div id="bpmnModel"></div>
+	</div>
+</div>
+
+<div style="border:1px;">
+
+<table border="1">
+<tr><td>
+Name of the Learning Path  <input type="text"/> <br> <br>
+ID of the Learning Path <br> <br>
+ID of the BPMN <br> <br>
+Description <br> <br>
+Mode <br> <br>
+Scope <br> <br>
+Learning Tasks <br> <br>
+
+<table border="1" width="1200px">
+<tr>
+<th> Task</th>
+<th>Participant</th>
+<th>Input Data</th>
+<th>Expected Output</th>
+</tr>
+<tr>
+<td>Row 2, Column 1</td>
+<td>Row 2, Column 2</td>
+</tr>
+</table>
+<br> 
+Key Performance Indicators <br>
+</div></td>
+</tr>
+</table>

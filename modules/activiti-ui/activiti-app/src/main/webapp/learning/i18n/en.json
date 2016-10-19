@@ -44,7 +44,8 @@
             "CANCEL": "Cancel",
             "CLOSE": "Close",
             "CONFIRM": "Confirm",
-            "SHOW-MORE": "Show more..."
+            "SHOW-MORE": "Show more...",
+            "RETURN-TO-LIST": "Show all definitions"
         },
         "MESSAGE": {
             "SELECT-PEOPLE-HELP": "Use &uparrow; and &downarrow; to select and press Enter to confirm",
